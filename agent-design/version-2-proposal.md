@@ -59,6 +59,25 @@ This document outlines a proposed **Version 2 architecture** designed to address
 | **Cross-Case Context** | Strictly isolated case dockets | Read-only cross-docket pre-filing injunction indexing |
 | **Calendar Availability** | Redis CP-SAT solver caching | Redis predictive slot pre-allocation with automatic invalidation |
 
+### Calibrated Behavioral Profile Parameters
+
+| Category | Behavioral Trait | Baseline V1 | **Improved V2** | Operational Rationale |
+| :--- | :--- | :---: | :---: | :--- |
+| **Interaction** | **Initial trust** | 15 | **18 / 100** | **Cautious:** Preserves strict Pre-LLM security gates (unredacted PII, SSNs, sealed juvenile record isolation). |
+| | **Assertiveness** | 45 | **55 / 100** | **Proactive Screening:** Actively intercepts vexatious repeat filers subject to 28 U.S.C. § 1651 pre-filing injunctions. |
+| | **Cooperation** | 80 | **82 / 100** | **Collaborative:** Seamless human-in-the-loop co-pilot routing interrupts and draft orders to court clerks. |
+| | **Transparency** | 95 | **96 / 100** | **Radical Transparency:** Immutable SHA-256 audit ledger; notices explicitly cite codified rules and cure timelines. |
+| | **Empathy** | 35 | **48 / 100** | **Procedural Accessibility:** Modern Plain-Language guidance (Variant B) increases cure rates without crossing into legal advice. |
+| | **Willingness to compromise** | 15 | **32 / 100** | **Bi-Level Defect Tolerance:** Tolerates Class A cosmetic/formatting flaws with advisory notes; strictly enforces Class B due process prerequisites. |
+| **Decision-Making** | **Risk tolerance** | 10 | **20 / 100** | **Controlled Bifurcation:** Allows provisional emergency docketing for ex parte TROs while tolling fees in parallel. |
+| | **Adaptability** | 20 | **38 / 100** | **Multi-Relief Disaggregation:** Autonomous two-pass parser splits omnibus pro se pleadings into independent relief tracks. |
+| | **Innovation** | 25 | **28 / 100** | **Conventional Proceduralist:** Rooted in statutory civil procedure, backed by Google OR-Tools CP-SAT and Redis caching. |
+| | **Rule adherence** | 98 | **92 / 100** | **Codified with *Pro Se* Canon:** Maintains strict standards for counseled attorneys while applying *Haines v. Kerner* formatting leniency. |
+| | **Evidence reliance** | 95 | **95 / 100** | **Evidence-Led:** Requires 95%+ deterministic entity match (SSN/Bar ID) before diverting cases to pre-filing screening. |
+| **Performance** | **Outcome drive** | 10 | **12 / 100** | **Process-Focused:** 100% substantively neutral; protects procedural due process regardless of case merits. |
+| | **Resilience** | 92 | **92 / 100** | **Fault-Tolerant:** Durable Temporal workflows, Redis in-memory fallbacks, and automated raster OCR recovery. |
+| | **Leadership (optional)** | 30 | **32 / 100** | **Administrative Co-Pilot:** Acts in strict executive support of Article III Judges and the Clerk of Court. |
+
 ---
 
 ## 4. Formal Research Disclaimer

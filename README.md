@@ -90,74 +90,18 @@ The agent's decision-making was evaluated across five multi-party procedural sce
 
 ---
 
-## Agent Behavioral Profile & Version 2 Calibration
-
-Following rigorous testing across the five simulation scenarios and an empirical design review, LexisOps's psychometric and behavioral configuration was calibrated from the Baseline V1 to the **Access-to-Justice Facilitator (Version 2)** posture:
-
-### Comparative Behavioral Slider Calibration Matrix
-
-| Category | Behavioral Trait | Baseline V1 | **Improved V2** | Operational Rationale |
-| :--- | :--- | :---: | :---: | :--- |
-| **Interaction** | **Initial trust** | 15 | **18 / 100** | **Cautious:** Preserves strict Pre-LLM security gates (unredacted PII, SSNs, sealed juvenile record isolation). |
-| | **Assertiveness** | 45 | **55 / 100** | **Proactive Screening:** Actively intercepts vexatious repeat filers subject to 28 U.S.C. § 1651 pre-filing injunctions. |
-| | **Cooperation** | 80 | **82 / 100** | **Collaborative:** Seamless human-in-the-loop co-pilot routing interrupts and draft orders to court clerks. |
-| | **Transparency** | 95 | **96 / 100** | **Radical Transparency:** Immutable SHA-256 audit ledger; notices explicitly cite codified rules and cure timelines. |
-| | **Empathy** | 35 | **48 / 100** | **Procedural Accessibility:** Modern Plain-Language guidance (Variant B) increases cure rates without crossing into legal advice. |
-| | **Willingness to compromise** | 15 | **32 / 100** | **Bi-Level Defect Tolerance:** Tolerates Class A cosmetic/formatting flaws with advisory notes; strictly enforces Class B due process prerequisites. |
-| **Decision-Making** | **Risk tolerance** | 10 | **20 / 100** | **Controlled Bifurcation:** Allows provisional emergency docketing for ex parte TROs while tolling fees in parallel. |
-| | **Adaptability** | 20 | **38 / 100** | **Multi-Relief Disaggregation:** Autonomous two-pass parser splits omnibus pro se pleadings into independent relief tracks. |
-| | **Innovation** | 25 | **28 / 100** | **Conventional Proceduralist:** Rooted in statutory civil procedure, backed by Google OR-Tools CP-SAT and Redis caching. |
-| | **Rule adherence** | 98 | **92 / 100** | **Codified with *Pro Se* Canon:** Maintains strict standards for counseled attorneys while applying *Haines v. Kerner* formatting leniency. |
-| | **Evidence reliance** | 95 | **95 / 100** | **Evidence-Led:** Requires 95%+ deterministic entity match (SSN/Bar ID) before diverting cases to pre-filing screening. |
-| **Performance** | **Outcome drive** | 10 | **12 / 100** | **Process-Focused:** 100% substantively neutral; protects procedural due process regardless of case merits. |
-| | **Resilience** | 92 | **92 / 100** | **Fault-Tolerant:** Durable Temporal workflows, Redis in-memory fallbacks, and automated raster OCR recovery. |
-| | **Leadership (optional)** | 30 | **32 / 100** | **Administrative Co-Pilot:** Acts in strict executive support of Article III Judges and the Clerk of Court. |
-
-### Key Architectural Shifts in Version 2
-
-1. **The Access-to-Justice Pivot (`Adaptability: 38`, `Empathy: 48`):** Eliminates the failure mode from Scenario 05 where handwritten omnibus letters stalled in single-schema triage by autonomously disaggregating multi-relief filings.
-2. **The Smart Gatekeeper Balance (`Compromise: 32`, `Assertiveness: 55`):** Distinguishes cosmetic typos from fatal due process omissions, while actively screening repeat vexatious filers across divisional dockets.
-3. **Institutional Legitimacy (`Leadership: 32`, `Risk Tolerance: 20`):** Preserves human-in-the-loop oversight for all dispositive judicial actions. Full specifications available in [`agent-design/version-2-proposal.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/agent-design/version-2-proposal.md).
-
----
-
 ## Repository Navigation
 
-```
-agentversa-agent-behavior-study/
-├── README.md                                    <- Project Overview & Research Perspective (This File)
-├── agent-design/
-│   ├── version-1.md                             <- Baseline Agent Specifications & Behavioral Profile (V1)
-│   └── version-2-proposal.md                    <- Empirical Redesign Proposal Based on Scenario Evidence (V2)
-├── predictions/
-│   └── scenario-predictions.md                  <- Pre-Simulation Predictions & Hypothesis Log
-├── scenario-observations/
-│   ├── scenario-01.md                           <- FRCP 5(d)(4) Non-Refusal & Conditional Docketing
-│   ├── scenario-02.md                           <- 28 U.S.C. § 1915 IFP Tolling & Fee Grace Periods
-│   ├── scenario-03.md                           <- 28 U.S.C. § 455 Recusal & Inter-Divisional Transfer
-│   ├── scenario-04.md                           <- FRCP 65(b) Emergency Ex Parte TRO Gateway
-│   └── scenario-05.md                           <- Castro v. United States Pro Se Recharacterization
-├── cross-scenario-findings.md                   <- Synthesis of Multi-Agent Behavioral Patterns
-├── final-report.md                              <- Comprehensive Research Report (1,500–2,500 Words)
-├── ethics-and-limitations.md                    <- Ethical Scope, Model Limitations & Non-Production Disclaimers
-├── LICENSE-or-usage-note.md                     <- Usage Rights, Academic Integrity & License Terms
-└── code/                                        <- Optional Implementation & Simulation Engine
-    ├── lexis_ops/                               <- Autonomous Court Administration Engine Source Code
-    ├── frontend/                                <- Next.js Clerk Review & Operational Console
-    ├── tests/                                   <- Automated Verification Suite (103 Tests Passing)
-    ├── specs/                                   <- Execution & Architectural Specifications
-    ├── docker-compose.yml                       <- Redis, Temporal & PostgreSQL Cluster Orchestration
-    └── Court_Administration_Agent_PRD.md        <- Full System Product Requirements Document (PRD)
-```
-
----
-
-## Technical Architecture & Stack Summary
-
-While the behavioral analysis in this portfolio is self-contained and does not require executing software, the underlying simulation is backed by an enterprise-grade sovereign engineering stack:
-- **Constraint Scheduling Engine:** Google OR-Tools CP-SAT (Linear Constraint Programming)
-- **Durable Orchestration:** Temporal Distributed Workflow Cluster
-- **Persistence & Audit:** PostgreSQL 16 ACID Database with SHA-256 Cryptographic Audit Ledger
-- **Caching & Message Broker:** Redis 7 (Sub-millisecond calendar caching, priority queues, and Pub/Sub SSE notifications)
-- **Operator Review Console:** Next.js 15 + Tailwind CSS Clerk Exception Dashboard
-- **Language Models:** Google Gemini 2.5 Flash / Instructor Pydantic V2 Constrained Decoders
+* **[agent-design/version-1.md](file:///c:/Users/Asus/Desktop/Agent-Versa/agent-design/version-1.md)**: Baseline agent design, authority limits, escalation rules, and behavioral traits.
+* **[agent-design/version-2-proposal.md](file:///c:/Users/Asus/Desktop/Agent-Versa/agent-design/version-2-proposal.md)**: Empirical V2 redesign proposal and calibrated behavioral parameters based on simulation findings.
+* **[predictions/scenario-predictions.md](file:///c:/Users/Asus/Desktop/Agent-Versa/predictions/scenario-predictions.md)**: Ex-ante behavioral predictions and post-episode reflections across all scenarios.
+* **[scenario-observations/scenario-01.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-01.md)**: Scenario 01 - Procedural Defect & FRCP 5(d)(4) Non-Refusal Rule.
+* **[scenario-observations/scenario-02.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-02.md)**: Scenario 02 - IFP Application & 28 U.S.C. § 1915 Fee Tolling.
+* **[scenario-observations/scenario-03.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-03.md)**: Scenario 03 - Judicial Recusal & Automated Reassignment under 28 U.S.C. § 455.
+* **[scenario-observations/scenario-04.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-04.md)**: Scenario 04 - Emergency Ex Parte TRO Gateway under FRCP 65(b).
+* **[scenario-observations/scenario-05.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-05.md)**: Scenario 05 - Pro Se Recharacterization under Castro v. United States.
+* **[cross-scenario-findings.md](file:///c:/Users/Asus/Desktop/Agent-Versa/cross-scenario-findings.md)**: Synthesis of multi-agent dynamics, trust formation, and failure modes.
+* **[final-report.md](file:///c:/Users/Asus/Desktop/Agent-Versa/final-report.md)**: Comprehensive final research report covering all rubric dimensions.
+* **[ethics-and-limitations.md](file:///c:/Users/Asus/Desktop/Agent-Versa/ethics-and-limitations.md)**: Ethical scope, LLM nondeterminism, privacy protections, and research constraints.
+* **[LICENSE-or-usage-note.md](file:///c:/Users/Asus/Desktop/Agent-Versa/LICENSE-or-usage-note.md)**: Terms of research portfolio usage and academic integrity statement.
+* **[code/](file:///c:/Users/Asus/Desktop/Agent-Versa/code)**: Optional simulation software, tests, and constraint solver implementations.
