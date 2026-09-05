@@ -16,29 +16,29 @@ This project was conducted entirely within a synthetic, controlled multi-agent s
 
 ## 2. Nondeterminism & LLM Output Variability
 
-* **Stochastic Generation:** Language model outputs are probabilistic. While temperature parameters were set to low or zero thresholds, responses may vary between execution runs depending on model updates, context window tokenization, and infrastructure latency.
-* **Prompt Sensitivity:** Observed agent behaviors are strongly coupled to specific prompt framings, system directives, few-shot examples, and scenario descriptions. Minor alterations in scenario wording can significantly alter intermediate reasoning paths.
+* **Output Variance Across Runs:** Language model output can vary between runs due to the probabilistic nature of autoregressive generation, even when temperature parameters are constrained.
+* **Environmental & Prompt Influences:** Agent behavior may be heavily influenced by system prompts, scenario wording, underlying model limitations, memory retrieval mechanisms, simulated multi-agent relationships, and platform design.
 
 ---
 
 ## 3. Nature of "Private Reflections" and Model Cognition
 
-* **Structured Summaries, Not "Consciousness":** References to an agent's "private reflection", "internal reasoning", or "intent" refer exclusively to generated structured JSON or markdown summaries produced by the model.
-* **No Access to Hidden Internal States:** These outputs do not provide transparent access to the underlying neural network weights, attention heads, or unobservable model representations. They should be evaluated as generated narrative text rather than direct cognitive introspection.
+* **Generated Structured Summaries:** A displayed private reflection or internal reasoning log is a generated structured summary, not access to hidden chain-of-thought or raw internal cognitive activations.
+* **No Introspective Transparency:** These outputs are generated textual narratives produced to satisfy structured schemas and must not be interpreted as evidence of subjective intent or unobservable mental states.
 
 ---
 
 ## 4. Simulated Risk Metrics & Telemetry Calibration
 
-* **Synthetic Metrics:** Priority designations (`SEV-1 Emergency`, `SEV-2 Alert`, `SEV-3 Standard`), confidence scores, and defect severity levels are synthetic heuristic outputs derived from rule-matching algorithms.
-* **Calibration Scope:** Unless explicitly calibrated against historical empirical court dockets, these scores represent experimental ordering indices rather than statistically validated actuarial risk probabilities.
+* **Simulated Assessments:** Risk scores, priority flags (`SEV-1 Emergency`, `SEV-2 Alert`, `SEV-3 Standard`), and confidence scores are simulated assessments unless separately calibrated against real-world baseline distributions.
+* **No Actuarial Validity:** Without external validation against empirical historical court records, these metrics serve solely as experimental ordering heuristics within the simulation environment.
 
 ---
 
 ## 5. Sample Size & Generalizability Constraints
 
-* **Limited Scenario Horizon:** The behavioral observations in this portfolio are derived from five primary benchmark episodes.
-* **No Blanket Competence Claims:** Results from a small cohort of controlled simulation runs cannot establish universal system safety, constitutional due process compliance, or professional clerical competence across diverse jurisdictional landscapes.
+* **Limited Scenario Scope:** The findings in this study reflect observations across five controlled simulation scenarios.
+* **No Claims of Production Safety or Competence:** Results from a small number of scenarios cannot establish production safety, constitutional compliance, or professional competence in live judicial administration.
 
 ---
 
