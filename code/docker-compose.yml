@@ -1,0 +1,153 @@
+services:
+  # ============================================================================
+  # 1. PostgreSQL Persistence for Temporal Cluster
+  # ============================================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: lexisops-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: temporal
+      POSTGRES_PASSWORD: temporal_password
+      POSTGRES_DB: temporal
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U temporal -d temporal"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - lexisops-net
+
+  # ============================================================================
+  # 2. Temporal Orchestration Server (Auto-Setup)
+  # ============================================================================
+  temporal:
+    image: temporalio/auto-setup:1.24.2
+    container_name: lexisops-temporal
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB: postgresql
+      DB_PORT: 5432
+      POSTGRES_USER: temporal
+      POSTGRES_PWD: temporal_password
+      POSTGRES_SEEDS: postgres
+      DYNAMIC_CONFIG_FILE_PATH: config/dynamicconfig/development-sql.yaml
+    ports:
+      - "7233:7233"
+    networks:
+      - lexisops-net
+
+  # ============================================================================
+  # 3. Temporal Web UI
+  # ============================================================================
+  temporal-ui:
+    image: temporalio/ui:latest
+    container_name: lexisops-temporal-ui
+    restart: unless-stopped
+    depends_on:
+      - temporal
+    environment:
+      TEMPORAL_ADDRESS: temporal:7233
+      TEMPORAL_CORS_ORIGINS: "http://localhost:3000"
+    ports:
+      - "8080:8080"
+    networks:
+      - lexisops-net
+
+  # ============================================================================
+  # 4. Redis In-Memory Caching & Message Broker
+  # ============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: lexisops-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - lexisops-net
+
+  # ============================================================================
+  # 5. LexisOps Temporal Worker & Health Gateway (Python 3.12 LTS)
+  # ============================================================================
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: worker
+    container_name: lexisops-worker
+    restart: unless-stopped
+    depends_on:
+      temporal:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    environment:
+      TEMPORAL_HOST: temporal:7233
+      TEMPORAL_NAMESPACE: default
+      TEMPORAL_TASK_QUEUE: lexis-ops-filing-queue
+      REDIS_URL: redis://redis:6379/0
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      PORT: 8000
+      HOST: 0.0.0.0
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+      CLERK_SECRET_KEY: ${CLERK_SECRET_KEY:-LEXIS_OPS_CLERK_HMAC_MASTER_KEY}
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - lexisops-net
+
+  # ============================================================================
+  # 6. Next.js Clerk Review Console (Node.js 22 LTS)
+  # ============================================================================
+  console:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: console
+    container_name: lexisops-console
+    restart: unless-stopped
+    depends_on:
+      - worker
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      NEXT_PUBLIC_API_URL: http://worker:8000
+      CLERK_SECRET_KEY: ${CLERK_SECRET_KEY:-LEXIS_OPS_CLERK_HMAC_MASTER_KEY}
+    ports:
+      - "3000:3000"
+    networks:
+      - lexisops-net
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  lexisops-net:
+    driver: bridge
+
