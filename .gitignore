@@ -58,3 +58,7 @@ yarn-error.log*
 .idea/
 .DS_Store
 Thumbs.db
+
+# Internal rubric and redesign guides
+Redesign.md
+AgentVersa_Student_Program_Rubric.md
