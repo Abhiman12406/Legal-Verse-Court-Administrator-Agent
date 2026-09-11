@@ -1,55 +1,47 @@
-# Ethical Principles, Research Scope, and Systemic Limitations
+# Ethics, Scope, and Research Limitations
 
-> **Program:** AgentVersa Multi-Agent Behavioral Research Program  
-> **Agent Studied:** LexisOps (Court Administration / Clerk Gatekeeper)  
-> **Applicability:** All simulation observations, evaluations, and findings in this repository  
-
----
-
-## 1. Simulated Environment Notice (Non-Legal Work)
-
-This project was conducted entirely within a synthetic, controlled multi-agent simulation framework (**AgentVersa**). 
-* **No Real Legal Authority:** The agents, workflows, orders, and automated responses implemented in this repository **do not perform real-world legal work and do not constitute legal advice or formal court filings**.
-* **No Certified Production Status:** The software and models demonstrated herein are designed for academic and behavioral research purposes. They have not been certified under federal or state court IT standards (such as CJIS 5.9, FedRAMP High, or state judicial administration rules) for real-world deployment.
+> **Agent:** LexisOps (Court Administration / Clerk Gatekeeper)  
+> **Simulation Program:** AgentVersa Student Research Program  
+> **Evaluation Window:** Scenarios 01 through 05  
+> **Research Track:** Multi-Agent Behavioral Dynamics  
 
 ---
 
-## 2. Nondeterminism & LLM Output Variability
+## 1. Educational and Experimental Scope
 
-* **Output Variance Across Runs:** Language model output can vary between runs due to the probabilistic nature of autoregressive generation, even when temperature parameters are constrained.
-* **Environmental & Prompt Influences:** Agent behavior may be heavily influenced by system prompts, scenario wording, underlying model limitations, memory retrieval mechanisms, simulated multi-agent relationships, and platform design.
+This repository documents an educational and behavioral research study conducted within the **AgentVersa controlled simulation platform**. 
 
----
-
-## 3. Nature of "Private Reflections" and Model Cognition
-
-* **Generated Structured Summaries:** A displayed private reflection or internal reasoning log is a generated structured summary, not access to hidden chain-of-thought or raw internal cognitive activations.
-* **No Introspective Transparency:** These outputs are generated textual narratives produced to satisfy structured schemas and must not be interpreted as evidence of subjective intent or unobservable mental states.
+* **No Actual Legal Work:** Neither the LexisOps agent nor any peer agents in the simulation perform real legal work, execute legally binding administrative acts, or deliver formal legal advice.
+* **No Court Certification:** The workflows, rule validations, and draft orders produced in this simulation are synthetic exercises designed to test agent behavior under administrative constraints. They are not certified for production use in any judicial district or court clerk's office.
+* **Procedural Boundary Enforcement:** The agent is structurally prohibited from evaluating the merits of legal arguments, assessing witness credibility, or exercising judicial discretion.
 
 ---
 
-## 4. Simulated Risk Metrics & Telemetry Calibration
+## 2. Non-Determinism and Model Variability
 
-* **Simulated Assessments:** Risk scores, priority flags (`SEV-1 Emergency`, `SEV-2 Alert`, `SEV-3 Standard`), and confidence scores are simulated assessments unless separately calibrated against real-world baseline distributions.
-* **No Actuarial Validity:** Without external validation against empirical historical court records, these metrics serve solely as experimental ordering heuristics within the simulation environment.
-
----
-
-## 5. Sample Size & Generalizability Constraints
-
-* **Limited Scenario Scope:** The findings in this study reflect observations across five controlled simulation scenarios.
-* **No Claims of Production Safety or Competence:** Results from a small number of scenarios cannot establish production safety, constitutional compliance, or professional competence in live judicial administration.
+* **Stochastic Generation:** Although LexisOps employs deterministic checklists for procedural validation, underlying natural language understanding and text extraction rely on Large Language Models (LLMs) that are inherently non-deterministic. Identical pleadings submitted across different runs may produce minor textual phrasing variances in generated deficiency notices.
+* **Prompt and Context Framing Sensitivity:** Agent behavior is sensitive to system prompt instructions, scenario descriptions, conversational context, and prior message framing. Slight modifications in an adversary agent's phrasing or tone could alter the timing or escalation velocity of the clerk's office responses.
+* **Platform Architecture and State Management:** Observed decision sequences reflect not only agent reasoning but also platform-level workflow engines, message queue brokers, and timeout thresholds configured in the AgentVersa environment.
 
 ---
 
-## 6. Privacy, PII, and Confidentiality Safeguards
+## 3. Epistemic Status of Agent Reflections and Risk Scores
 
-* **Synthetic Case Data:** All case captions, party names, docket numbers, judge identifiers, and attorney signatures appearing in this repository are entirely fictional or based on standard public domain legal templates (e.g., standard Form AO-240, hypothetical Acme Holdings vs. Apex Semiconductor).
-* **Zero PII Exposure:** No private student data, real litigant medical records, sealed juvenile filings, or proprietary commercial secrets were ingested or generated during this research study.
+* **Nature of Private Reflections:** The "private reflections" and "internal assessments" recorded in the simulation logs represent structured, synthetic text generations elicited by platform prompts. They do not represent direct access to unmonitored model cognition or true internal subjective states.
+* **Simulated Risk Metrics:** Numerical risk assessments (e.g., due process risk, scheduling deadlock risk) generated during episodes are simulated heuristic indicators within the simulation framework. They have not been validated against empirical judicial error rates or actuarial court performance standards.
+* **Simulated Personality Profiles:** Slider calibration metrics (such as Rule Adherence: 98/100 or Risk Tolerance: 10/100) are behavioral steering weights within AgentVersa rather than validated psychometric or cognitive indices.
 
 ---
 
-## 7. Due Process & Ethical Governance in Courtroom AI
+## 4. Empirical Sample Size and Generalization Constraints
 
-* **Preserving Human-in-the-Loop Authority:** Automated legal agents must never displace human judicial officers or replace clerical discretion with unreviewable algorithmic black boxes.
-* **Sovereignty of the Record:** Clerks of court hold a constitutional responsibility under Article III and state equivalents to protect the integrity of the public docket. Autonomous systems must operate strictly as auditable, transparent assistants rather than autonomous arbiters.
+* **Limited Scenario Corpus:** The evaluation corpus comprises five targeted procedural stress tests (Scenarios 01 through 05). While these scenarios illuminate specific edge cases (such as non-refusal compliance, indigency fee tolling, judicial conflict deadlock, emergency notice gates, and unrepresented litigant protections), five episodes cannot establish comprehensive statistical safety, robust production reliability, or full edge-case coverage.
+* **Simulated Stakeholder Behavior:** Interacting agents (filing counsel, judges, opposing litigants) operated under simulated behavioral prompts. Real-world attorneys and pro se litigants display far greater diversity in pleading styles, emotional intensity, procedural non-compliance, and strategic behavior.
+
+---
+
+## 5. Privacy, Synthetic Data, and Confidentiality Safeguards
+
+* **Synthetic Records Only:** All party names, corporate affiliations, case captions, docket numbers, and judicial identities used across Scenarios 01 through 05 are completely synthetic and fictional.
+* **No Real-World PII:** No actual litigant records, real Social Security numbers, confidential commercial filings, or sealed court dockets were ingested, processed, or stored in this repository.
+* **Public Release Compliance:** All scenario observations, predictions, and analytical reports adhere strictly to academic confidentiality guidelines and contain zero sensitive personal data.

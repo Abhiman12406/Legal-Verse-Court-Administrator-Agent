@@ -1,107 +1,112 @@
-# AgentVersa: Role-Based Behavioral Analysis of Court Administration AI Agents
+# LexisOps Court Administration Agent: Multi-Agent Behavioral Study
 
-> **Research Portfolio & Behavioral Study Submission**  
-> **AgentVersa Student Research Program**  
-> **Role Evaluated:** Court Clerk & Administrative Gatekeeper (*LexisOps*)  
-> **Repository:** `agentversa-agent-behavior-study`  
+> **AgentVersa Student Research Program Portfolio**  
+> **Author / Student Role:** LexisOps Research Lead (Track A / Simulation Fellow)  
+> **Evaluated Role:** Court Clerk & Operational Gatekeeper  
+> **Simulation Framework:** JusticeNet Procedural Code & Multi-Agent Environment  
 
 ---
 
-## Executive Overview & Educational Disclaimer
+## 1. Executive Overview
+
+This repository contains the complete research portfolio, agent design specifications, empirical scenario observation logs, and behavioral analysis for **LexisOps**, an autonomous court administration co-pilot evaluated within the **AgentVersa Multi-Agent Behavioral Study**. 
+
+The investigation examined how an AI administrative gatekeeper behaves when placed under strict procedural constraints, evaluating whether an automated system can enforce filing validation, conflict-free scheduling, statutory deadlines, and due process access without ever exercising judicial discretion or evaluating substantive legal merits.
+
+---
+
+## 2. About AgentVersa
+
+**AgentVersa** is a controlled multi-agent simulation environment developed for studying how differently designed AI agents interpret assigned institutional roles, make decisions under procedural uncertainty, interact with peer agents, resolve inter-agent conflict, and develop recurring behavioral patterns across connected scenarios. By modeling diverse courtroom participants—including litigation counsel, indigent filers, motion judges, and court administrators—the platform allows researchers to observe how rule constraints shape autonomous agent dynamics in simulated public administration settings.
+
+---
+
+## 3. Core Research Question
+
+> **Can a strictly rule-bounded, non-discretionary AI administrative agent reliably enforce procedural compliance, due process safeguards, and conflict-free calendaring in a high-volume simulated judicial environment without overstepping its administrative mandate into substantive legal merits or judicial discretion?**
+
+---
+
+## 4. Agent Architecture & Role Design: LexisOps
+
+LexisOps is designed as an impartial, reliable administrative co-pilot for the court clerk's office. Its operational responsibilities are strictly structured around **seven core administrative pillars** under the codified **JusticeNet Procedural Code & Administrative Directives**:
+
+```
+                                  [ Inbound Electronic Filing ]
+                                                │
+                                                ▼
+                               [ Rule Boundary & Authority Check ]
+                                                │
+                       ┌────────────────────────┴────────────────────────┐
+                       ▼                                                 ▼
+             ┌───────────────────┐                             ┌───────────────────┐
+             │  Procedural Gate  │                             │ Substantive Merit │
+             └─────────┬─────────┘                             └─────────┬─────────┘
+                       │ (PERMITTED)                                     │ (STRICTLY FORBIDDEN)
+                       ▼                                                 ▼
+             • Verified signatures?                            • Is the legal claim valid?
+             • Fee paid or fee-waiver code?                    • Is evidence or testimony credible?
+             • Proof of service attached?                      • Who should prevail in the matter?
+             • Statutory deadlines met?                                          │
+                       │                                                         ▼
+                       │                                            [ IMMEDIATE SYSTEM REFUSAL ]
+                       ▼                                            Escalate to Judicial Officer
+             Execute Procedural Intake
+```
+
+### The Seven Operational Pillars (Aligned with Redesign Directives)
+1. **Filing Validation:** Systematic intake inspection of filings for mandatory prerequisites: signature presence, certified proof of service, filing fee payment or fee-waiver application, and compliant caption metadata.
+2. **Scheduling:** Automated hearing date and courtroom allocation governed by deterministic constraint satisfaction that cross-references judicial conflict rosters and enforces advance notice buffers.
+3. **Deadlines:** Calculation and tracking of statutory cure windows, response timers, tolling periods, and payment grace intervals under codified court rules.
+4. **Record Accuracy & Non-Refusal Compliance:** Mandatory conditional docketing of non-conforming filings under **JusticeNet Rule 5.4**, preserving receipt timestamps and compiling draft proposed orders to strike rather than unilaterally rejecting filings.
+5. **Case Routing:** Structured escalation and transmission of filings to presiding judges, specialized emergency review queues, or inter-divisional reassignment tracks.
+6. **Procedural Access:** Generation of plain-language deficiency notices that clearly state what is missing, cite the governing JusticeNet rule, specify the deadline to cure, and detail the exact remedial step required.
+7. **Human Escalation:** Immediate workflow suspension and alerting of human court clerks and judicial officers whenever an uncertified emergency filing, judicial conflict deadlock, or procedural uncertainty arises.
+
+---
+
+## 5. Simulation & Scenario Overview
+
+The agent's behavioral dynamics were evaluated across five multi-party procedural stress tests governed by the **JusticeNet** procedural framework:
+
+| Scenario | Governing Rule / Directive | Operational Stress Test & Simulated Mechanics |
+| :--- | :--- | :--- |
+| **[Scenario 01](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-01.md)** | **JusticeNet Rule 5.4** | **Mandatory Conditional Intake:** Litigant submits a motion missing proof of service; agent must avoid unauthorized clerk rejection, conditionally docket the filing, and compile a proposed order to strike. |
+| **[Scenario 02](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-02.md)** | **JusticeNet Directive 19-B** | **Indigency Fee-Waiver Tolling:** Indigent filer submits complaint without fee; agent tolls dismissal timers and calculates a mandatory 21-calendar-day grace period upon judicial fee-waiver denial. |
+| **[Scenario 03](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-03.md)** | **JusticeNet Rule 45.2** | **Judicial Conflict & Divisional Deadlock:** Disclosed corporate affiliates conflict with all candidate judges in the division; agent executes recusal exclusion and issues an Inter-Divisional Transfer Notice. |
+| **[Scenario 04](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-04.md)** | **JusticeNet Directive 65-E** | **Emergency Ex Parte Relief Gateway:** Movant seeks immediate ex parte restraining order without notice certification; agent halts autonomous pipeline and routes to emergency judicial gateway. |
+| **[Scenario 05](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-05.md)** | **JusticeNet Order 14-P** | **Unrepresented Litigant Safeguards:** Pro se party files informal letter seeking relief; agent quarantines pleading, issues a 14-day statutory warning, and stays opposing briefing pending election. |
+
+---
+
+## 6. Major Findings
+
+Across the five simulated episodes, the research study produced the following core findings:
+
+* **100% Procedural Fidelity Across High-Stakes Interactions:** LexisOps adhered strictly to its non-substantive boundary across all five scenarios, achieving zero unauthorized legal interpretations, zero merit evaluations, and perfect role adherence (10/10).
+* **Elimination of Ultra Vires Clerical Rejections:** Under the JusticeNet Rule 5.4 protocol, the agent eliminated improper clerical document rejections by reliably executing conditional docketing paired with automated draft proposed orders to strike.
+* **Deterministic Conflict-Free Judicial Scheduling:** Constraint-satisfaction scheduling mathematically guaranteed the exclusion of conflicted judges, reliably generating formal recusal transfer certificates when entire divisions were disqualified.
+* **Due Process Protections for Unrepresented Parties:** Under JusticeNet Administrative Order 14-P, the agent successfully quarantined informal pro se pleadings, issued plain-language warnings, and protected litigants against premature forfeiture.
+* **Effective Bureaucratic Independence:** When subjected to aggressive adversarial demands from litigation counsel urging premature dismissal or rejection, LexisOps maintained an objective, neutral posture and consistently enforced codified procedural safeguards.
+
+---
+
+## 7. Repository Navigation
+
+* **[`agent-design/version-1.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/agent-design/version-1.md)**: Baseline Version 1 agent design, authority limits, escalation rules, and simulation slider parameters.
+* **[`agent-design/version-2-proposal.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/agent-design/version-2-proposal.md)**: Empirical Version 2 redesign proposal, architectural improvements, and calibrated behavioral parameters.
+* **[`predictions/scenario-predictions.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/predictions/scenario-predictions.md)**: Ex-ante behavioral predictions recorded prior to episode execution and post-episode reflections.
+* **[`scenario-observations/`](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations)**: Detailed observation logs for Scenarios 01 through 05.
+* **[`cross-scenario-findings.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/cross-scenario-findings.md)**: Synthesis of multi-agent dynamics, recurring behavioral patterns, and failure modes.
+* **[`final-report.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/final-report.md)**: Comprehensive 2,000+ word final research report covering all program rubric dimensions.
+* **[`ethics-and-limitations.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/ethics-and-limitations.md)**: Ethical boundaries, LLM non-determinism, privacy safeguards, and simulation constraints.
+* **[`LICENSE-or-usage-note.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/LICENSE-or-usage-note.md)**: Academic integrity statement, CC BY 4.0 license, and educational disclaimer.
+* **[`Redesign.md`](file:///c:/Users/Asus/Desktop/Agent-Versa/Redesign.md)**: Six core redesign principles governing the agent's procedural and behavioral boundaries.
+
+---
+
+## 8. Educational Research Disclaimer
 
 > [!IMPORTANT]
-> **SIMULATED EDUCATIONAL STUDY NOTICE**  
-> This project was developed as an educational research study within the **AgentVersa** simulation environment. The agents, scenarios, evaluations, and simulated outputs described herein **do not perform real legal work, do not provide legal advice, and do not represent a certified production-system evaluation**. All court rules, judicial decisions, and docket entries are evaluated solely for studying multi-agent behavioral dynamics, role fidelity, and procedural constraints.
-
----
-
-## About AgentVersa
-
-**AgentVersa** is a controlled multi-agent simulation framework engineered for investigating how autonomous, role-specialized AI agents interpret organizational directives, navigate procedural boundaries, collaborate under high-stakes uncertainty, and evolve behavioral dynamics across interconnected operational scenarios. Rather than evaluating generic language capabilities, AgentVersa isolates how architectural constraints, authority limits, and escalation rules govern agent decision quality and inter-agent cooperation in domain-specific workflows.
-
----
-
-## Research Question
-
-> *How does a strictly bounded procedural court administration agent maintain role fidelity, statutory adherence (e.g., Fed. R. Civ. P. 5(d)(4), 65(b), and Castro v. United States), and deterministic escalation without overstepping into substantive judicial adjudication or suffering from procedural hallucinations under uncertainty?*
-
----
-
-## The Designed Agent: LexisOps Court Administration Agent
-
-The agent studied in this research program is **LexisOps**, a role-based administrative co-pilot designed for municipal and federal trial court clerk offices. 
-
-### Core Agent Architecture & Operational Boundaries
-```
-                  ┌────────────────────────────────────────┐
-                  │       Inbound Filing / Motion          │
-                  └──────────────────┬─────────────────────┘
-                                     │
-                   [ Rule Boundary & Authority Check ]
-                                     │
-            ┌────────────────────────┴────────────────────────┐
-            ▼                                                 ▼
-  ┌───────────────────┐                             ┌───────────────────┐
-  │  Procedural Gate  │                             │ Substantive Merit │
-  └─────────┬─────────┘                             └─────────┬─────────┘
-            │ (PERMITTED)                                     │ (STRICTLY FORBIDDEN)
-            ▼                                                 ▼
-  • Signature blocks verified?                      • Does the claim state valid law?
-  • Filing fee code / IFP tolling?                  • Is witness testimony credible?
-  • Certificate of service attached?                • Who should prevail in the case?
-  • Statutory timelines satisfied?                                    │
-            │                                                         ▼
-            │                                            [ IMMEDIATE SYSTEM REFUSAL ]
-            ▼                                            Escalate to Judicial Officer
-  Execute Auto-Validation / Flag
-```
-
-### Key Behavioral Constraints
-1. **Procedural vs. Substantive Wall:** Structurally prohibited from offering legal advice, evaluating evidentiary credibility, or deciding substantive merits.
-2. **Fed. R. Civ. P. 5(d)(4) Non-Refusal Mandate:** Barred from unilaterally rejecting defective filings; must conditionally docket and compile a proposed order to strike for judicial signature.
-3. **28 U.S.C. § 1915 In Forma Pauperis (IFP) Tolling:** Automatically stays statutory rejection windows upon fee-waiver application and enforces a mandatory 21-day grace period if denied.
-4. **28 U.S.C. § 455 Conflict Screening:** Excludes conflicted judicial officers using deterministic constraint satisfaction (Google OR-Tools CP-SAT) cross-referenced against Rule 7.1 corporate disclosures.
-5. **Fed. R. Civ. P. 65(b) Emergency Ex Parte TRO Gate:** Halts unilateral emergency relief without written attorney certification, routing to a tri-partite judicial review gateway.
-6. **Castro v. United States Pro Se Protection:** Quarantines recharacterized pro se pleadings and issues a mandatory 14-day statutory election notice prior to applying preclusive legal consequences.
-
----
-
-## Simulation & Scenario Overview
-
-The agent's decision-making was evaluated across five multi-party procedural scenarios:
-
-| Scenario | Primary Rule / Doctrine | Operational Stress Test |
-| :--- | :--- | :--- |
-| **[Scenario 01](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-01.md)** | **Fed. R. Civ. P. 5(d)(4)** | **Defective Motion to Dismiss:** Litigant submits filing missing certificates of service; agent must avoid unauthorized clerk rejection and execute conditional docketing. |
-| **[Scenario 02](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-02.md)** | **28 U.S.C. § 1915 & Local Rules** | **In Forma Pauperis (IFP) Tolling:** Indigent filer submits complaint without fee; agent tolls dismissal timeline and calculates a 21-day grace period upon judicial denial. |
-| **[Scenario 03](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-03.md)** | **28 U.S.C. § 455 & Rule 7.1** | **Judicial Recusal & Division Deadlock:** Candidate judges hold stock in disclosed parent entities; agent excludes conflicted judges and generates an Inter-Divisional Transfer Notice. |
-| **[Scenario 04](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-04.md)** | **Fed. R. Civ. P. 65(b)** | **Emergency Ex Parte TRO Application:** Movant seeks immediate restraining order without notice or attorney certification; agent halts pipeline and routes to Judge. |
-| **[Scenario 05](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-05.md)** | **Castro v. United States (540 U.S. 375)** | **Pro Se Pleading Recharacterization:** Unrepresented party files informal "Letter for Relief"; agent quarantines pleading, generates Castro warning, and tracks 14-day election. |
-
----
-
-## Major Findings
-
-* **100% Procedural Fidelity Across High-Stakes Inputs:** The agent consistently adhered to its non-substantive boundary, achieving zero unauthorized legal interpretations across all five benchmark scenarios.
-* **Elimination of Ultra Vires Clerk Rejections:** Under the Rule 5(d)(4) protocol, the agent eliminated wrongful e-filing rejections by reliably executing conditional docketing paired with machine-drafted orders to strike.
-* **Deterministic Judicial Conflict Resolution:** The CP-SAT constraint engine mathematically guaranteed zero double-bookings and hard exclusion of conflicted judges, correctly generating formal recusal certificates when entire divisions were disqualified.
-* **Pro Se Due Process Safeguards Under Castro:** Accurately quarantined unstructured pro se filings, generating machine-readable tokens (`CASTRO-RECLASS-*`) and managing affirmative, amendatory, or withdrawal responses without procedural forfeiture.
-* **Sub-Millisecond Caching & Real-Time Clerk Alerting:** Integration of Redis in-memory caching reduced repeated calendar availability lookups to sub-millisecond latencies, while Pub/Sub streams ensured real-time delivery of SEV-1 emergency alerts to the Clerk Review Console.
-
----
-
-## Repository Navigation
-
-* **[agent-design/version-1.md](file:///c:/Users/Asus/Desktop/Agent-Versa/agent-design/version-1.md)**: Baseline agent design, authority limits, escalation rules, and behavioral traits.
-* **[agent-design/version-2-proposal.md](file:///c:/Users/Asus/Desktop/Agent-Versa/agent-design/version-2-proposal.md)**: Empirical V2 redesign proposal and calibrated behavioral parameters based on simulation findings.
-* **[predictions/scenario-predictions.md](file:///c:/Users/Asus/Desktop/Agent-Versa/predictions/scenario-predictions.md)**: Ex-ante behavioral predictions and post-episode reflections across all scenarios.
-* **[scenario-observations/scenario-01.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-01.md)**: Scenario 01 - Procedural Defect & FRCP 5(d)(4) Non-Refusal Rule.
-* **[scenario-observations/scenario-02.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-02.md)**: Scenario 02 - IFP Application & 28 U.S.C. § 1915 Fee Tolling.
-* **[scenario-observations/scenario-03.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-03.md)**: Scenario 03 - Judicial Recusal & Automated Reassignment under 28 U.S.C. § 455.
-* **[scenario-observations/scenario-04.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-04.md)**: Scenario 04 - Emergency Ex Parte TRO Gateway under FRCP 65(b).
-* **[scenario-observations/scenario-05.md](file:///c:/Users/Asus/Desktop/Agent-Versa/scenario-observations/scenario-05.md)**: Scenario 05 - Pro Se Recharacterization under Castro v. United States.
-* **[cross-scenario-findings.md](file:///c:/Users/Asus/Desktop/Agent-Versa/cross-scenario-findings.md)**: Synthesis of multi-agent dynamics, trust formation, and failure modes.
-* **[final-report.md](file:///c:/Users/Asus/Desktop/Agent-Versa/final-report.md)**: Comprehensive final research report covering all rubric dimensions.
-* **[ethics-and-limitations.md](file:///c:/Users/Asus/Desktop/Agent-Versa/ethics-and-limitations.md)**: Ethical scope, LLM nondeterminism, privacy protections, and research constraints.
-* **[LICENSE-or-usage-note.md](file:///c:/Users/Asus/Desktop/Agent-Versa/LICENSE-or-usage-note.md)**: Terms of research portfolio usage and academic integrity statement.
-* **[code/](file:///c:/Users/Asus/Desktop/Agent-Versa/code)**: Optional simulation software, tests, and constraint solver implementations.
+> **SIMULATED STUDY — NOT REAL LEGAL ADVICE OR PRODUCTION COURT SOFTWARE**  
+> This project is conducted solely for academic and behavioral research purposes within the AgentVersa student research program. Neither the agent design nor the research documentation constitutes legal advice, certified court administration software, or a live filing portal. All legal rules and administrative procedures referenced are based on the fictional JusticeNet simulation framework.
